@@ -1,5 +1,5 @@
 fastapi
 uvicorn
-pyodbc
 python-dotenv
 pydantic-settings
+psycopg2-binary

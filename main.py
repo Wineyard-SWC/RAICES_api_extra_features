@@ -20,9 +20,9 @@ app.add_middleware(
 
 # Incluir los routers
 app.include_router(users.router)
-app.include_router(emociones.router)
-app.include_router(user_emociones.router)
-app.include_router(user_eeg.router) 
+# app.include_router(emociones.router)
+# app.include_router(user_emociones.router)
+# app.include_router(user_eeg.router) 
 
 # Ruta de prueba (raíz)
 @app.get("/")

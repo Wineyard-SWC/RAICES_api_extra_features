@@ -1,18 +1,14 @@
-# app/db/connection.py
-
-import pyodbc
-from app.core.config import DB_SERVER, DB_NAME, DB_USER, DB_PASSWORD, DB_DRIVER
+import psycopg2
+from app.core.config import DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
 
 def get_connection():
     """
-    Retorna una nueva conexión a la base de datos usando pyodbc.
+    Retorna una nueva conexión a Postgres usando psycopg2.
     """
-    connection_string = (
-        f"DRIVER={{{DB_DRIVER}}};"
-        f"SERVER={DB_SERVER};"
-        f"DATABASE={DB_NAME};"
-        f"UID={DB_USER};"
-        f"PWD={DB_PASSWORD}"
+    return psycopg2.connect(
+        host=DB_HOST,
+        port=DB_PORT,
+        dbname=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD
     )
-    conn = pyodbc.connect(connection_string)
-    return conn
