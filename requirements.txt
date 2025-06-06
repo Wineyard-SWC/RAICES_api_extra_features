@@ -3,3 +3,10 @@ uvicorn
 python-dotenv
 pydantic-settings
 psycopg2-binary
+sqlalchemy[asyncio]      # SQLAlchemy 2.x con soporte asyncio
+asyncpg                  # driver nativo asíncrono
+numpy
+brainflow                # procesar EEG
+neurokit2                # procesar PPG/HRV
+python-multipart # para manejar archivos subidos
+PyWavelets

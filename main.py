@@ -1,7 +1,7 @@
 # main.py
 
 from fastapi import FastAPI
-from app.routers import users, emociones, user_emociones, user_eeg
+from app.routers import users, biometrics, sessions, emociones, user_emociones, user_eeg
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
@@ -20,6 +20,8 @@ app.add_middleware(
 
 # Incluir los routers
 app.include_router(users.router)
+app.include_router(biometrics.router)
+app.include_router(sessions.router)  # ✅ Agregar este router
 # app.include_router(emociones.router)
 # app.include_router(user_emociones.router)
 # app.include_router(user_eeg.router) 
